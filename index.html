@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>E-Commerce - website</title>
+  </head>
+  <body>
+    <div class="begin">
+      <div>
+        <div id="scart">
+          <div id="topnav" class="head">
+            <a href="">Intro</a>
+            <a href="#middle">About</a>
+            <a href="#buy">Shop</a>
+          </div>
+          <button id="cart" onclick="displayPopPay()">
+            <img
+              src="docum/Images/cart.svg"
+              alt=""
+              height="20px"
+              width="20px"
+            /><span id="spa">0</span>
+          </button>
+        </div>
+        <img src="docum/Images/EMS.svg" alt="" />
+        <div class="mill">
+          <h1 id="word">THE E-MILLENIAL STORE</h1>
+          <img src="docum/Images/heroImage.png" alt="" width="600px" />
+        </div>
+        <div id="tunde">
+          <a href="#middle" id="shop"><p>SHOP NOW</p></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="middle">
+      <p>
+        E-Millenial store is an hypothethical online store for gadgets we
+        believe every 'Millenial' or 'GEN-Z' should have today.We've got mobile
+        phones, laptops, smartwatches and other gadgets.Explore all our gadgets
+        and choose the one that suit you.
+      </p>
+    </div>
+
+    <div id="buy">
+      <h1>OUR GADGETS</h1>
+      <div id="group">
+        <div id="sell">
+          <img
+            src="docum/Images/product1.png"
+            height="350px"
+            width="400px"
+            alt=""
+          />
+          <div id="come">
+            <p>SAMSUNG-TV</p>
+            <button id="p1" onclick="RemoveFromCart1()">ADD TO CART</button>
+          </div>
+        </div>
+        <div id="sell">
+          <img
+            src="docum/Images/product2.png"
+            height="350px"
+            width="400px"
+            alt=""
+          />
+          <div id="come">
+            <p>PIXEL 4a</p>
+            <button id="p2" onclick="RemoveFromCart2() ">ADD TO CART</button>
+          </div>
+        </div>
+        <div id="sell">
+          <img
+            src="docum/Images/product3.png"
+            height="350px"
+            width="400px"
+            alt=""
+          />
+          <div id="come">
+            <p>PS 5</p>
+            <button id="p3" onclick="RemoveFromCart3()">ADD TO CART</button>
+          </div>
+        </div>
+        <div id="sell">
+          <img
+            src="docum/Images/product4.png"
+            height="350px"
+            width="400px"
+            alt=""
+          />
+          <div id="come">
+            <p>MACBOOK AIR</p>
+            <button id="p4" onclick="RemoveFromCart4()">ADD TO CART</button>
+          </div>
+        </div>
+        <div id="sell">
+          <img
+            src="docum/Images/product5.png"
+            height="350px"
+            width="400px"
+            alt=""
+          />
+          <div id="come">
+            <p>APPLE WATCH</p>
+            <button id="p5" onclick="RemoveFromCart5()">ADD TO CART</button>
+          </div>
+        </div>
+        <div id="sell">
+          <img
+            src="docum/Images/product6.png"
+            height="350px"
+            width="400px"
+            alt=""
+          />
+          <div id="come">
+            <p>AIR PODS</p>
+            <button id="p6" onclick="RemoveFromCart6()">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="foot">
+      <div id="set">
+        <img src="docum/Images/EMS.svg" alt="" />
+        <p>Created,Designed and Crafted by Musoye</p>
+      </div>
+    </div>
+
+    <div id="pay">
+      <div>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody id="asa">
+              <!-- This will be he area for where the shop thing will show -->
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <form action="">
+            <input type="text" placeholder="Your Name"  required>
+            <br >
+            <input type="email" placeholder="Your E-mail" required>
+            <br >
+            <input type="tel" placeholder="your Phone Number" required>
+          </form>
+        </div>
+
+        <div id="paid">
+          <p>Total Amount to be paid</p>
+          <p></p>
+        </div>
+
+        <div id="check">
+          <button
+            style="background-color: #ff9a3d"
+            id="nul"
+            onclick="RemovePopPay()"
+          >
+            Continue Shopping
+          </button>
+          <button style="background-color: #ff9a3d" value="submit">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

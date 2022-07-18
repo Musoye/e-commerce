@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+#pay {
+    margin: 0px;
+    max-height: 800px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: whitesmoke;
+}
+th {
+    width: 70px;
+    margin-left: 8px;
+}
+input {
+    width: 400px;
+    height: 25px;
+    border-color: black;
+    background-color: bisque;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#paid p {
+    font-size: 30px;
+    font-family: Tahoma;
+    margin-left: 3%;
+}
+#check {
+    margin-top: 15px;
+    margin-left: 15%;
+}
+#check button{
+    height: 50px;
+    width: 100px;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    border-color: bisque;
+}

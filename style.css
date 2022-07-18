@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    margin: 0px;
+    max-height: 100%;
+}
+.begin {
+   max-width: 100%;
+   background-color: #FFE9D6;
+}
+.head {
+    overflow: hidden;	
+  }
+.head{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.head a {
+    color: rgb(27, 23, 43);
+    text-decoration: none;
+    padding-right: 10px;
+}
+#cart {
+    position: relative;
+    left: 90%;
+    bottom: 50%;
+}
+#cart{
+    background-color: #FF9A3D;
+    border-radius: 15px;
+    border-color: white;
+    width: 50px;
+}
+#spa {
+    color: white;
+    font-size: 22px;
+
+}
+.mill{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1,1;
+}
+@media screen and (max-width:874px) {
+    .mill{
+    display: flex;
+    flex-direction: column;
+    }   
+}
+@media screen and (max-width:548px) {
+    .mill img{
+        max-width: 350px;
+
+    }   
+}
+#word{
+    font-size: 50px;
+    color: #FF7A00;
+    padding-top: 15%;
+    padding-left: 5%;
+}
+#tunde{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FF7A00;
+}
+#tunde a {  
+    text-decoration: none;
+    background-color: #FF7A00;
+}
+#shop{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+#middle{
+    background-color: black;
+}
+#middle p{
+    font-family: sans-serif;
+    color: whitesmoke;
+    font-size: 25px;
+    padding: 50px;
+
+}
+#buy{
+    background-color: whitesmoke;
+}
+#buy h1 {
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sell{
+    display: flex;
+    flex-direction: column;
+}
+#come {
+    width: 150px;
+    margin-left: 6%;
+    margin-right: 10%;
+}
+#come p {
+    font-size: 20px;
+    color: black;
+}
+#come button {
+    width: 150px;
+    background-color: #FF7A00;
+    margin-top: 6px;
+    border-color: white;
+    border-radius: 7px;
+    font-size: 20px;
+}
+#group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#foot{
+    background-color: black;
+}
+#set {
+    margin-left: 20px;
+}
+#set img{
+    margin-top: 5%;
+
+}
+#set p{
+    color: whitesmoke;
+    font-size: 23px;
+}
+
+/* pay */
+
+#pay {
+    display: none;
+}
+@keyframes example {
+    from {z-index: 0.2;}
+    to {z-index: 1;}
+    
+}
+#pay {
+    margin: 0px;
+    max-height: 800px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    animation: example 4s linear 1s 1 alternate;
+}
+#pay > div {
+    position: absolute;
+    top: 0px;
+    right: auto;
+    left: auto;
+    background-color: whitesmoke !important;
+    padding: 3px;
+    border: 5px solid black;
+}
+
+th {
+    width: 80px;
+    margin-left: 8px;
+}
+input {
+    width: 400px;
+    height: 25px;
+    border-color: black;
+    background-color: bisque;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#paid p {
+    font-size: 30px;
+    font-family: Tahoma;
+    margin-left: 3%;
+}
+#check {
+    margin-top: 15px;
+    margin-left: 15%;
+}
+#check button{
+    width: 105px;
+    color: white;
+    font-size: 11px;
+    padding: 1px;
+    font-family: sans-serif;
+    border-color: bisque;
+    border-radius: 8px;
+}
+#btn-sale {
+    padding: 4px;
+    background-color: #FF9A3D;
+    color: white;
+    font-weight: bolder;    
+    width: 20px;
+    border-color: #FF9A3D;
+    border-radius: 2px;
+}
+#sal {
+    color: blue;
+}
