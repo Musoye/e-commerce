@@ -187,6 +187,21 @@ input {
     font-family: Tahoma;
     margin-left: 3%;
 }
+.divamount{
+    display: flex;
+    flex-direction: row;
+}
+.amounted {
+    color: greenyellow;
+    font-family: monospace;
+    font-size: 25px;
+    font-weight: bolder;
+    font-style: italic;
+}
+span.amounted {
+    font-size: 28px;
+    font-style: oblique;
+}
 #check {
     margin-top: 15px;
     margin-left: 15%;
