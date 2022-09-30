@@ -68,13 +68,19 @@ var productBuy = {
 };
 
 
-//Displaying and nullifying the pop-up page
+//Displaying pop-up page
 function displayPopPay() {
     var pop = document.getElementById('pay');
     pop.style.display = 'block';
 }
-function RemovePopPay() {
+//Nullifying the pop and reload the entire webpage
+function ReloadSession() {
     location.reload();
+}
+//Not displaying the pop up
+function RemovePopPay() {
+    var pop = document.getElementById('pay');
+    pop.style.display = 'none';
 }
 
 
