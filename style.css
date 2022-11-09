@@ -237,3 +237,7 @@ span.amounted {
 #sal {
     color: blue;
 }
+/* Hide elment */
+#pixel1, #pixel2, #pixel3, #pixel4, #pixel5, #pixel6 {
+    display: none;
+}

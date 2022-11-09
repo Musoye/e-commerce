@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>E-Commerce - website</title>
   </head>
   <body>
@@ -57,7 +57,7 @@
           />
           <div id="come">
             <p>SAMSUNG-TV</p>
-            <button id="p1" onclick="RemoveFromCart1()">ADD TO CART</button>
+            <button id="p1">ADD TO CART</button>
           </div>
         </div>
         <div id="sell">
@@ -69,7 +69,7 @@
           />
           <div id="come">
             <p>PIXEL 4a</p>
-            <button id="p2" onclick="RemoveFromCart2() ">ADD TO CART</button>
+            <button id="p2">ADD TO CART</button>
           </div>
         </div>
         <div id="sell">
@@ -81,7 +81,7 @@
           />
           <div id="come">
             <p>PS 5</p>
-            <button id="p3" onclick="RemoveFromCart3()">ADD TO CART</button>
+            <button id="p3">ADD TO CART</button>
           </div>
         </div>
         <div id="sell">
@@ -93,7 +93,7 @@
           />
           <div id="come">
             <p>MACBOOK AIR</p>
-            <button id="p4" onclick="RemoveFromCart4()">ADD TO CART</button>
+            <button id="p4">ADD TO CART</button>
           </div>
         </div>
         <div id="sell">
@@ -105,7 +105,7 @@
           />
           <div id="come">
             <p>APPLE WATCH</p>
-            <button id="p5" onclick="RemoveFromCart5()">ADD TO CART</button>
+            <button id="p5">ADD TO CART</button>
           </div>
         </div>
         <div id="sell">
@@ -117,7 +117,7 @@
           />
           <div id="come">
             <p>AIR PODS</p>
-            <button id="p6" onclick="RemoveFromCart6()">ADD TO CART</button>
+            <button id="p6">ADD TO CART</button>
           </div>
         </div>
       </div>
@@ -141,6 +141,61 @@
                 <th>Price</th>
                 <th>Quantity</th>
               </tr>
+              <!-- Element to add as product -->
+              <tr class="element1" id="pixel1">
+                <td class="nomen1">Samsung TV</td>
+                <td class="price1">500000</td>
+                <td id="sal">
+                  <button id="btn-sale" class="classsub1">-</button
+                  ><span id="sal" class="sal present1">1</span
+                  ><button id="btn-sale" class="btn1 btnadd1">+</button>
+                </td>
+              </tr>
+              <tr class="element2" id="pixel2">
+                <td class="nomen2">Pixel 4a</td>
+                <td class="price1">250000</td>
+                <td id="sal">
+                  <button id="btn-sale" class="btnsub2">-</button>
+                  <span id="sal" class="present2">1</span
+                  ><button id="btn-sale" class="btnadd2">+</button>
+                </td>
+              </tr>
+              <tr class="element3" id="pixel3">
+                <td class="nomen3">PS 5</td>
+                <td class="price1">300000</td>
+                <td id="sal">
+                  <button id="btn-sale" class="btnsub3">-</button>
+                  <span id="sal" class="present3">1</span
+                  ><button id="btn-sale" class="btnadd">+</button>
+                </td>
+              </tr>
+              <tr class="element4" id="pixel4">
+                <td class="nomen4">MacBook Air</td>
+                <td class="price1">800000</td>
+                <td id="sal">
+                  <button id="btn-sale" class="btnsub4">-</button>
+                  <span id="sal" class="present4">1</span
+                  ><button id="btn-sale" class="btnadd4">+</button>
+                </td>
+              </tr>
+              <tr class="element5" id="pixel5">
+                <td class="nomen5">Apple Watch</td>
+                <td class="price1">95000</td>
+                <td id="sal">
+                  <button id="btn-sale" class="btnsub5">-</button>
+                  <span id="sal " class="present5">1</span
+                  ><button id="btn-sale" class="btnadd5">+</button>
+                </td>
+              </tr>
+              <tr class="element6" id="pixel6">
+                <td class="nomen6">Air Pods</td>
+                <td class="price1">7500</td>
+                <td id="sal">
+                  <button id="btn-sale" class="btnsub6">-</button>
+                  <span id="sal " class="present6">1</span
+                  ><button id="btn-sale" class="btnadd6">+</button>
+                </td>
+              </tr>
             </thead>
             <tbody id="asa">
               <!-- This will be he area for where the shop thing will show -->
@@ -159,7 +214,10 @@
 
         <div id="paid">
           <p>Total Amount to be paid</p>
-          <div class='divamount'> <span class='amounted'>$</span><p class='amounted' id="amounted"></p></div>
+          <div class="divamount">
+            <span class="amounted">$</span>
+            <p class="amounted" id="amounted"></p>
+          </div>
         </div>
 
         <div id="check">
@@ -177,7 +235,6 @@
       </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./commerce.js"></script>
   </body>
 </html>
-
