@@ -152,13 +152,11 @@ body {
     
 }
 #pay {
-    margin: 0px;
     max-height: 800px;
     width: 700px;
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
-    animation: example 4s linear 1s 1 alternate;
 }
 #pay > div {
     position: absolute;
@@ -166,14 +164,17 @@ body {
     right: auto;
     left: auto;
     background-color: whitesmoke !important;
-    padding: 3px;
+    padding: 5px;
     border: 5px solid black;
 }
+th{
+    padding-right: 5px;
+}
 
-th {
+tr, td { 
     width: 80px;
     margin-left: 8px;
-}
+  } 
 #cancelpop {
     color: rgb(178, 66, 66);
     font-weight: bolder;
@@ -225,12 +226,11 @@ span.amounted {
     border-color: bisque;
     border-radius: 8px;
 }
-#btn-sale {
+.btn-sale {
     padding: 4px;
     background-color: #FF9A3D;
     color: white;
-    font-weight: bolder;    
-    width: 20px;
+    font-weight: bolder;
     border-color: #FF9A3D;
     border-radius: 2px;
 }
