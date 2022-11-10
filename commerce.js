@@ -1,6 +1,5 @@
 var count = 0;
 var totalCost = document.getElementById('amounted');
-totalCost.innerHTML = 0;
 
 //each element and their properties
 var products = [
@@ -43,48 +42,66 @@ var products = [
 
 ];
 // displaying element
-function DisplayElem(elementid) 
-{
+function DisplayElem(elementid) {
     let element = document.getElementById(elementid);
     element.style.display = 'block';
 }
 // Not display Element
-function NotDisplayElem(elementid)
-{
+function NotDisplayElem(elementid) {
     let element = document.getElementById(elementid);
     element.style.display = 'none';
 }
 
 
 //Increse each body element
-function IncreaseNum(elementid)
-{
+function IncreaseNum(elementid) {
     let element = document.getElementById(elementid);
     let coun = parseInt(element.innerHTML);
     coun++;
     element.innerHTML = coun;
+    //Handling the total amount
+    let pay1 = parseInt(document.getElementById('present1').innerHTML);
+    let pay2 = parseInt(document.getElementById('present2').innerHTML);
+    let pay3 = parseInt(document.getElementById('present3').innerHTML);
+    let pay4 = parseInt(document.getElementById('present4').innerHTML);
+    let pay5 = parseInt(document.getElementById('present5').innerHTML);
+    let pay6 = parseInt(document.getElementById('present6').innerHTML);
+
+    totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].
+        price) + (pay5 * products[4].price) + (pay6 * products[5].price);
+    console.log(totalCost.innerHTML)
 }
 // Decrease each body element
-function DecreaseNum(elementname)
-{
+function DecreaseNum(elementname) {
     let last = elementname.charAt(elementname.length - 1);
     console.log(last);
     let element = document.getElementById(elementname);
     let coun = parseInt(element.innerHTML);
-    if (coun >= 2)
-    {
+    if (coun >= 2) {
         coun--;
         element.innerHTML = coun;
     }
-    else
-    {
-        alert(`The quantity can't be less than 1 and it will be removed,So if you still eant to buy it add the item back in the aAdd to Cart Menu. Thank you!:`);
+    else {
+        alert(`The quantity can't be less than 1 and it will be removed,So if you still eant to buy it add the item back in the aAdd to Cart Menu. Thank you!  `);
         let elel = 'pixel' + last;
         let p = 'p' + last;
+        coun = 0;
+        element.innerHTML = coun;
         // console.log(p);
         // console.log(elel);
         RemoveFromCart(p, elel);
     }
+    //Handling the total amount
+    let pay1 = parseInt(document.getElementById('present1').innerHTML);
+    let pay2 = parseInt(document.getElementById('present2').innerHTML);
+    let pay3 = parseInt(document.getElementById('present3').innerHTML);
+    let pay4 = parseInt(document.getElementById('present4').innerHTML);
+    let pay5 = parseInt(document.getElementById('present5').innerHTML);
+    let pay6 = parseInt(document.getElementById('present6').innerHTML);
+
+    totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].
+        price) + (pay5 * products[4].price) + (pay6 * products[5].price);
+    console.log(totalCost.innerHTML)
 }
 //Displaying pop-up page
 function displayPopPay() {
@@ -131,13 +148,28 @@ function RemoveFromCart(elementid, elementname) {
             counter.innerHTML = count;
             Para.innerHTML = 'ADD TO CART';
             Para.style.backgroundColor = " #FF7A00";
+            let newelement = document.getElementById(newelem);
+            newelement.innerHTML = 0;
         } else {
             count = 0;
             counter.innerHTML = count;
             Para.innerHTML = 'ADD TO CART';
             Para.style.backgroundColor = " #FF7A00";
+            let newelement = document.getElementById(newelem);
+            newelement.innerHTML = 0;
         }
     }
+    //Handling the total amount
+    let pay1 = parseInt(document.getElementById('present1').innerHTML);
+    let pay2 = parseInt(document.getElementById('present2').innerHTML);
+    let pay3 = parseInt(document.getElementById('present3').innerHTML);
+    let pay4 = parseInt(document.getElementById('present4').innerHTML);
+    let pay5 = parseInt(document.getElementById('present5').innerHTML);
+    let pay6 = parseInt(document.getElementById('present6').innerHTML);
+
+    totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].
+        price) + (pay5 * products[4].price) + (pay6 * products[5].price);
+    console.log(totalCost.innerHTML)
 }
 
 //calling each element with its dom
@@ -146,24 +178,24 @@ let button2 = document.getElementById('p2');
 let button3 = document.getElementById('p3');
 let button4 = document.getElementById('p4');
 let button5 = document.getElementById('p5');
-let button6 = document.getElementById('p6'); 
-button1.onclick = function(){
-    RemoveFromCart('p1', 'pixel1');  
+let button6 = document.getElementById('p6');
+button1.onclick = function () {
+    RemoveFromCart('p1', 'pixel1');
 }
-button2.onclick = function(){
-    RemoveFromCart('p2', 'pixel2');  
+button2.onclick = function () {
+    RemoveFromCart('p2', 'pixel2');
 }
-button3.onclick = function(){
-    RemoveFromCart('p3', 'pixel3');  
+button3.onclick = function () {
+    RemoveFromCart('p3', 'pixel3');
 }
-button4.onclick = function(){
-    RemoveFromCart('p4', 'pixel4');  
+button4.onclick = function () {
+    RemoveFromCart('p4', 'pixel4');
 }
-button5.onclick = function(){
-    RemoveFromCart('p5', 'pixel5');  
+button5.onclick = function () {
+    RemoveFromCart('p5', 'pixel5');
 }
-button6.onclick = function(){
-    RemoveFromCart('p6', 'pixel6');  
+button6.onclick = function () {
+    RemoveFromCart('p6', 'pixel6');
 }
 
 //calling each increment with its dom
@@ -173,22 +205,22 @@ let btn3 = document.getElementById('btn-sale3');
 let btn4 = document.getElementById('btn-sale4');
 let btn5 = document.getElementById('btn-sale5');
 let btn6 = document.getElementById('btn-sale6');
-btn1.onclick = function(){
+btn1.onclick = function () {
     IncreaseNum('present1');
 }
-btn2.onclick = function(){
+btn2.onclick = function () {
     IncreaseNum('present2');
 }
-btn3.onclick = function(){
+btn3.onclick = function () {
     IncreaseNum('present3');
 }
-btn4.onclick = function(){
+btn4.onclick = function () {
     IncreaseNum('present4');
 }
-btn5.onclick = function(){
+btn5.onclick = function () {
     IncreaseNum('present5');
 }
-btn6.onclick = function(){
+btn6.onclick = function () {
     IncreaseNum('present6');
 }
 //calling each increment with its dom
@@ -198,21 +230,32 @@ let nbtn3 = document.getElementById('btn-sal3');
 let nbtn4 = document.getElementById('btn-sal4');
 let nbtn5 = document.getElementById('btn-sal5');
 let nbtn6 = document.getElementById('btn-sal6');
-nbtn1.onclick = function(){
-    DecreaseNum('present1') ;
+nbtn1.onclick = function () {
+    DecreaseNum('present1');
 }
-nbtn2.onclick = function(){
-    DecreaseNum('present2') ;
+nbtn2.onclick = function () {
+    DecreaseNum('present2');
 }
-nbtn3.onclick = function(){
-    DecreaseNum('present3') ;
+nbtn3.onclick = function () {
+    DecreaseNum('present3');
 }
-nbtn4.onclick = function(){
-    DecreaseNum('present4') ;
+nbtn4.onclick = function () {
+    DecreaseNum('present4');
 }
-nbtn5.onclick = function(){
-    DecreaseNum('present5') ;
+nbtn5.onclick = function () {
+    DecreaseNum('present5');
 }
-nbtn6.onclick = function(){
-    DecreaseNum('present6') ;
+nbtn6.onclick = function () {
+    DecreaseNum('present6');
 }
+
+//Handling the total amount
+// let pay1 = parseInt(document.getElementById('present1').innerHTML);
+// let pay2 = parseInt(document.getElementById('present2').innerHTML);
+// let pay3 = parseInt(document.getElementById('present3').innerHTML);
+// let pay4 = parseInt(document.getElementById('present4').innerHTML);
+// let pay5 = parseInt(document.getElementById('present5').innerHTML);
+// let pay6 = parseInt(document.getElementById('present6').innerHTML);
+//
+// // totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].price) + (pay5 * products[4].price) + (pay6 * products[5].price);
+// console.log(totalCost.innerHTML)
