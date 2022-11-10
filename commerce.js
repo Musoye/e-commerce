@@ -59,7 +59,7 @@ function IncreaseNum(elementid) {
     let coun = parseInt(element.innerHTML);
     coun++;
     element.innerHTML = coun;
-    //Handling the total amount
+    //Handling the total amount and change in amount of product when clicking button
     let pay1 = parseInt(document.getElementById('present1').innerHTML);
     let pay2 = parseInt(document.getElementById('present2').innerHTML);
     let pay3 = parseInt(document.getElementById('present3').innerHTML);
@@ -69,7 +69,20 @@ function IncreaseNum(elementid) {
 
     totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].
         price) + (pay5 * products[4].price) + (pay6 * products[5].price);
-    console.log(totalCost.innerHTML)
+    //console.log(totalCost.innerHTML);
+
+    let prc1 = document.getElementById('prc1');
+    prc1.innerHTML = parseInt(pay1 * products[0].price);
+    let prc2 = document.getElementById('prc2');
+    prc2.innerHTML = parseInt(pay2 * products[1].price);
+    let prc3 = document.getElementById('prc3');
+    prc3.innerHTML = parseInt(pay3 * products[2].price);
+    let prc4 = document.getElementById('prc4');
+    prc4.innerHTML = parseInt(pay4 * products[3].price);
+    let prc5 = document.getElementById('prc5');
+    prc5.innerHTML = parseInt(pay5 * products[4].price);
+    let prc6 = document.getElementById('prc6');
+    prc6.innerHTML = parseInt(pay6 * products[5].price);
 }
 // Decrease each body element
 function DecreaseNum(elementname) {
@@ -91,7 +104,7 @@ function DecreaseNum(elementname) {
         // console.log(elel);
         RemoveFromCart(p, elel);
     }
-    //Handling the total amount
+    //Handling the total amount and each element price when increment or decrement button is pressed.
     let pay1 = parseInt(document.getElementById('present1').innerHTML);
     let pay2 = parseInt(document.getElementById('present2').innerHTML);
     let pay3 = parseInt(document.getElementById('present3').innerHTML);
@@ -101,7 +114,21 @@ function DecreaseNum(elementname) {
 
     totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].
         price) + (pay5 * products[4].price) + (pay6 * products[5].price);
-    console.log(totalCost.innerHTML)
+    //console.log(totalCost.innerHTML);
+
+    let prc1 = document.getElementById('prc1');
+    prc1.innerHTML = parseInt(pay1 * products[0].price);
+    let prc2 = document.getElementById('prc2');
+    prc2.innerHTML = parseInt(pay2 * products[1].price);
+    let prc3 = document.getElementById('prc3');
+    prc3.innerHTML = parseInt(pay3 * products[2].price);
+    let prc4 = document.getElementById('prc4');
+    prc4.innerHTML = parseInt(pay4 * products[3].price);
+    let prc5 = document.getElementById('prc5');
+    prc5.innerHTML = parseInt(pay5 * products[4].price);
+    let prc6 = document.getElementById('prc6');
+    prc6.innerHTML = parseInt(pay6 * products[5].price);
+
 }
 //Displaying pop-up page
 function displayPopPay() {
@@ -159,7 +186,7 @@ function RemoveFromCart(elementid, elementname) {
             newelement.innerHTML = 0;
         }
     }
-    //Handling the total amount
+    //Handling the total amount and showing in the respective increment of element in each button
     let pay1 = parseInt(document.getElementById('present1').innerHTML);
     let pay2 = parseInt(document.getElementById('present2').innerHTML);
     let pay3 = parseInt(document.getElementById('present3').innerHTML);
@@ -169,7 +196,20 @@ function RemoveFromCart(elementid, elementname) {
 
     totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].
         price) + (pay5 * products[4].price) + (pay6 * products[5].price);
-    console.log(totalCost.innerHTML)
+    //console.log(totalCost.innerHTML);
+
+    let prc1 = document.getElementById('prc1');
+    prc1.innerHTML = parseInt(pay1 * products[0].price);
+    let prc2 = document.getElementById('prc2');
+    prc2.innerHTML = parseInt(pay2 * products[1].price);
+    let prc3 = document.getElementById('prc3');
+    prc3.innerHTML = parseInt(pay3 * products[2].price);
+    let prc4 = document.getElementById('prc4');
+    prc4.innerHTML = parseInt(pay4 * products[3].price);
+    let prc5 = document.getElementById('prc5');
+    prc5.innerHTML = parseInt(pay5 * products[4].price);
+    let prc6 = document.getElementById('prc6');
+    prc6.innerHTML = parseInt(pay6 * products[5].price);
 }
 
 //calling each element with its dom
@@ -249,13 +289,3 @@ nbtn6.onclick = function () {
     DecreaseNum('present6');
 }
 
-//Handling the total amount
-// let pay1 = parseInt(document.getElementById('present1').innerHTML);
-// let pay2 = parseInt(document.getElementById('present2').innerHTML);
-// let pay3 = parseInt(document.getElementById('present3').innerHTML);
-// let pay4 = parseInt(document.getElementById('present4').innerHTML);
-// let pay5 = parseInt(document.getElementById('present5').innerHTML);
-// let pay6 = parseInt(document.getElementById('present6').innerHTML);
-//
-// // totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].price) + (pay5 * products[4].price) + (pay6 * products[5].price);
-// console.log(totalCost.innerHTML)
