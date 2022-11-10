@@ -1,4 +1,3 @@
-var count = 0;
 var totalCost = document.getElementById('amounted');
 
 //each element and their properties
@@ -83,11 +82,15 @@ function IncreaseNum(elementid) {
     prc5.innerHTML = parseInt(pay5 * products[4].price);
     let prc6 = document.getElementById('prc6');
     prc6.innerHTML = parseInt(pay6 * products[5].price);
+
+    let ttotal = document.getElementById('tamounnt');
+    ttotal.value = totalCost.innerHTML;
+    //console.log(ttotal.value);
 }
 // Decrease each body element
 function DecreaseNum(elementname) {
     let last = elementname.charAt(elementname.length - 1);
-    console.log(last);
+    //console.log(last);
     let element = document.getElementById(elementname);
     let coun = parseInt(element.innerHTML);
     if (coun >= 2) {
@@ -129,6 +132,10 @@ function DecreaseNum(elementname) {
     let prc6 = document.getElementById('prc6');
     prc6.innerHTML = parseInt(pay6 * products[5].price);
 
+    let ttotal = document.getElementById('tamounnt');
+    ttotal.value = totalCost.innerHTML;
+    console.log(ttotal.value);
+
 }
 //Displaying pop-up page
 function displayPopPay() {
@@ -146,21 +153,21 @@ function RemovePopPay() {
     pop.style.display = 'none';
 }
 
-
 function RemoveFromCart(elementid, elementname) {
     let Para = document.getElementById(elementid);
     let counter = document.getElementById('spa');
+    let numcount = parseInt(counter.innerHTML)
     let lastem = elementid.charAt(elementid.length - 1);
     // console.log(elementid);
     // console.log(lastem);
     let newelem = 'present' + lastem;
-    console.log(newelem);
+    //console.log(newelem);
     // console.log(elementname);
 
     if (Para.innerHTML === 'ADD TO CART') {
         DisplayElem(elementname);
-        count = count + 1;
-        counter.innerHTML = count;
+        numcount += 1;
+        counter.innerHTML = numcount;
         Para.innerHTML = "REMOVE FROM THE CART";
         Para.style.backgroundColor = " #FF7A00";
         let newelement = document.getElementById(newelem);
@@ -171,15 +178,15 @@ function RemoveFromCart(elementid, elementname) {
         //let newelement = document.getElementById(newelem);
         //newelement.innerHTML = 0;
         if (count > 0) {
-            count = count - 1;
-            counter.innerHTML = count;
+            numcount -= 1;
+            counter.innerHTML = numcount;
             Para.innerHTML = 'ADD TO CART';
             Para.style.backgroundColor = " #FF7A00";
             let newelement = document.getElementById(newelem);
             newelement.innerHTML = 0;
         } else {
-            count = 0;
-            counter.innerHTML = count;
+            numcount = 0;
+            counter.innerHTML = numcount;
             Para.innerHTML = 'ADD TO CART';
             Para.style.backgroundColor = " #FF7A00";
             let newelement = document.getElementById(newelem);
@@ -196,7 +203,6 @@ function RemoveFromCart(elementid, elementname) {
 
     totalCost.innerHTML = (pay1 * products[0].price) + (pay2 * products[1].price) + (pay3 * products[2].price) + (pay4 * products[3].
         price) + (pay5 * products[4].price) + (pay6 * products[5].price);
-    //console.log(totalCost.innerHTML);
 
     let prc1 = document.getElementById('prc1');
     prc1.innerHTML = parseInt(pay1 * products[0].price);
@@ -210,6 +216,10 @@ function RemoveFromCart(elementid, elementname) {
     prc5.innerHTML = parseInt(pay5 * products[4].price);
     let prc6 = document.getElementById('prc6');
     prc6.innerHTML = parseInt(pay6 * products[5].price);
+
+    let ttotal = document.getElementById('tamounnt');
+    ttotal.value = totalCost.innerHTML;
+    console.log(ttotal.value);
 }
 
 //calling each element with its dom
@@ -287,5 +297,50 @@ nbtn5.onclick = function () {
 }
 nbtn6.onclick = function () {
     DecreaseNum('present6');
+}
+
+//the submit and go the checkout
+function Checkout(){
+    let name = document.getElementById('elementname');
+    let email = document.getElementById('email');
+    let number = document.getElementById('pnumber');
+    let newnum = parseInt(document.getElementById('spa').innerHTML);
+    if (newnum <= 0){
+        alert('Please SELECT what you want to buy from the Cart Menu!');
+    }
+    else{
+        if (!(name.value) || !(email.value) || !(number.value)){
+            alert('Please kindly fill the form carefully and makee sure you enter any missing field including you mane e-mailand telephone number.');
+        }
+        else {
+            payWithPaystack();  
+        }
+            
+    }
+
+}
+
+
+//Paystack Module for payment //NB: this is just for testing.
+const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener("submit", payWithPaystack, false);
+function payWithPaystack() {
+
+  let handler = PaystackPop.setup({
+    key: 'pk_test_d7550c1118c9fb6ecdd01e5ea47a7e1621ab54bc', // Replace with your public key
+    email: document.getElementById("email").value,
+    amount: document.getElementById('tamounnt').value * 100,
+    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+    // label: "Optional string that replaces customer email"
+    onClose: function(){
+      alert('Window closed.');
+    },
+    callback: function(response){
+      let message = 'Payment complete! Reference: ' + response.reference;
+      alert(message);
+    }
+  });
+
+  handler.openIframe();
 }
 

@@ -27,19 +27,19 @@ body {
 }
 #cart {
     position: relative;
-    left: 90%;
-    bottom: 50%;
+    left: 95%;
+    bottom: 30%;
 }
 #cart{
     background-color: #FF9A3D;
     border-radius: 15px;
-    border-color: white;
+    border-color: #FF7A00;
     width: 50px;
 }
 #spa {
     color: white;
-    font-size: 22px;
-
+    font-size: 24px;
+    margin-left: 10px;
 }
 .mill{
     display: flex;
@@ -56,6 +56,12 @@ body {
     .mill img{
         max-width: 350px;
 
+    }
+    #cart {
+        position: relative;
+        left: 75%;
+        bottom: 50%;
+        margin-left:20px
     }   
 }
 #word{
@@ -239,5 +245,8 @@ span.amounted {
 }
 /* Hide elment */
 #pixel1, #pixel2, #pixel3, #pixel4, #pixel5, #pixel6 {
+    display: none;
+}
+.hid {
     display: none;
 }

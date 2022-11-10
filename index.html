@@ -195,19 +195,20 @@
         </div>
         <div>
           <form action="">
-            <input type="text" placeholder="Your Name" required />
+            <input type="text" id='elementname' placeholder="Your Name" required />
             <br />
-            <input type="email" placeholder="Your E-mail" required />
+            <input type="email" id='email'placeholder="Your E-mail" required />
             <br />
-            <input type="tel" placeholder="your Phone Number" required />
+            <input type="tel" id="pnumber" placeholder="your Phone Number" required />
           </form>
         </div>
 
         <div id="paid">
           <p>Total Amount to be paid</p>
           <div class="divamount">
-            <span class="amounted">$</span>
+            <span class="amounted">₦</span>
             <p class="amounted" id="amounted"></p>
+            <p id='tamounnt' class="hid"></p>
           </div>
         </div>
 
@@ -219,13 +220,14 @@
           >
             Continue Shopping
           </button>
-          <button style="background-color: #ff9a3d" type="submit">
+          <button style="background-color: #ff9a3d" onclick="Checkout()">
             Checkout
           </button>
         </div>
       </div>
     </div>
 
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
     <script src="./commerce.js"></script>
   </body>
 </html>
