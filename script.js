@@ -3,13 +3,19 @@ var totalCost = document.getElementById('amounted');
 totalCost.innerHTML = 0;
 
 //Global avriable for each item add and remove
-var nem1 = document.createElement("tr");
+// var nem1 = document.createElement("tr");
+var parentp = document.getElementById('addhide');
+var nem1  = parentp.getElementsByTagName('tr')[0].innerHTML;
+const parent1 = document.querySelector('tbody').appendChild(nem1);
+//console.log(parent1);
+// const clone1 = nem1.cloneNode(true);
+// parent1.appendChild(clone1);
 var nem2 = document.createElement("tr");
 var nem3 = document.createElement("tr");
 var nem4 = document.createElement("tr");
 var nem5 = document.createElement("tr");
 var nem6 = document.createElement("tr");
-document.querySelector('tbody').appendChild(nem1);
+//document.querySelector('tbody').appendChild(nem1);
 document.querySelector('tbody').appendChild(nem2);
 document.querySelector('tbody').appendChild(nem3);
 document.querySelector('tbody').appendChild(nem4);
@@ -58,14 +64,14 @@ var products = [
 
 ];
 
-var productBuy = {
-    'p1':0,
-    'p2':0,
-    'p3':0,
-    'p4':0,
-    'p5':0,
-    'p6':0
-};
+// var productBuy = {
+    // 'p1':0,
+    // 'p2':0,
+    // 'p3':0,
+    // 'p4':0,
+    // 'p5':0,
+    // 'p6':0
+// };
 
 
 //Displaying pop-up page
@@ -98,16 +104,20 @@ function RemovePopPay() {
 function RemoveFromCart1() {
     var ParaOne =document.getElementById('p1');
     var counter = document.getElementById('spa');
+    //const clone1 = nem1.cloneNode(true);
+    // parent1.appendChild(nem1);
+    var name1 = document.getElementsByClassName('nomen1');
+    name1.innerHTML = products[0].name;
     //nem1.addClass = 'boy';
     if (ParaOne.innerHTML == 'ADD TO CART') {
         count = count + 1
         counter.innerHTML = count;
         ParaOne.innerHTML ="REMOVE FROM THE CART";
         ParaOne.style.backgroundColor=" #FF7A00";
-        var num = 1;
-        var price1 = products[0].price;
-        productBuy.p1 = products[0].price;
-        totalCost.innerHTML = productBuy.p1 + productBuy.p2 + productBuy.p3 + productBuy.p4 + productBuy.p5 + productBuy.p6;
+        //var num = 1;
+        //var price1 = products[0].price;
+        //productBuy.p1 = products[0].price;
+        //totalCost.innerHTML = productBuy.p1 + productBuy.p2 + productBuy.p3 + productBuy.p4 + productBuy.p5 + productBuy.p6;
         // console.log(productBuy.p1)
 
         // To add the element to the pop-up
@@ -117,7 +127,7 @@ function RemoveFromCart1() {
 
         //The created element to the body section
         // var nem1 = document.createElement("tr");
-        nem1.innerHTML =`<td>${products[0].name}</td><td>${price1}</td><td id="sal"><button id="btn-sale">-</button><span id="sal" class="sal">${num}</span><button id="btn-sale" class="btn1">+</button></td>`;
+        //nem1.innerHTML =`<td>${products[0].name}</td><td>${price1}</td><td id="sal"><button id="btn-sale">-</button><span id="sal" class="sal">${num}</span><button id="btn-sale" class="btn1">+</button></td>`;
 
         // function ChangeInnervalue() {
             // num = num + 1;
@@ -134,9 +144,9 @@ function RemoveFromCart1() {
         
         
     } else {
-        nem1.innerHTML = '' ;
-        productBuy.p1 = 0;
-        totalCost.innerHTML = productBuy.p1 + productBuy.p2 + productBuy.p3 + productBuy.p4 + productBuy.p5 + productBuy.p6;
+        //nem1.innerHTML = '' ;
+        //productBuy.p1 = 0;
+        //totalCost.innerHTML = productBuy.p1 + productBuy.p2 + productBuy.p3 + productBuy.p4 + productBuy.p5 + productBuy.p6;
         if (count > 0) {
             count = count - 1;
             counter.innerHTML = count;

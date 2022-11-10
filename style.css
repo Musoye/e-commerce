@@ -27,19 +27,19 @@ body {
 }
 #cart {
     position: relative;
-    left: 90%;
-    bottom: 50%;
+    left: 95%;
+    bottom: 30%;
 }
 #cart{
     background-color: #FF9A3D;
     border-radius: 15px;
-    border-color: white;
+    border-color: #FF7A00;
     width: 50px;
 }
 #spa {
     color: white;
-    font-size: 22px;
-
+    font-size: 24px;
+    margin-left: 10px;
 }
 .mill{
     display: flex;
@@ -56,6 +56,12 @@ body {
     .mill img{
         max-width: 350px;
 
+    }
+    #cart {
+        position: relative;
+        left: 75%;
+        bottom: 50%;
+        margin-left:20px
     }   
 }
 #word{
@@ -152,13 +158,11 @@ body {
     
 }
 #pay {
-    margin: 0px;
     max-height: 800px;
     width: 700px;
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
-    animation: example 4s linear 1s 1 alternate;
 }
 #pay > div {
     position: absolute;
@@ -166,14 +170,17 @@ body {
     right: auto;
     left: auto;
     background-color: whitesmoke !important;
-    padding: 3px;
+    padding: 5px;
     border: 5px solid black;
 }
+th{
+    padding-right: 5px;
+}
 
-th {
+tr, td { 
     width: 80px;
     margin-left: 8px;
-}
+  } 
 #cancelpop {
     color: rgb(178, 66, 66);
     font-weight: bolder;
@@ -225,15 +232,21 @@ span.amounted {
     border-color: bisque;
     border-radius: 8px;
 }
-#btn-sale {
+.btn-sale {
     padding: 4px;
     background-color: #FF9A3D;
     color: white;
-    font-weight: bolder;    
-    width: 20px;
+    font-weight: bolder;
     border-color: #FF9A3D;
     border-radius: 2px;
 }
 #sal {
     color: blue;
+}
+/* Hide elment */
+#pixel1, #pixel2, #pixel3, #pixel4, #pixel5, #pixel6 {
+    display: none;
+}
+.hid {
+    display: none;
 }
