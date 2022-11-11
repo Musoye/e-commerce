@@ -10,7 +10,8 @@ const parent1 = document.querySelector('tbody').appendChild(nem1);
 //console.log(parent1);
 // const clone1 = nem1.cloneNode(true);
 // parent1.appendChild(clone1);
-var nem2 = document.createElement("tr");
+
+//₦
 var nem3 = document.createElement("tr");
 var nem4 = document.createElement("tr");
 var nem5 = document.createElement("tr");

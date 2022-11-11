@@ -173,7 +173,7 @@ body {
     padding: 5px;
     border: 5px solid black;
 }
-th{
+th {
     padding-right: 5px;
 }
 
@@ -250,3 +250,77 @@ span.amounted {
 .hid {
     display: none;
 }
+
+/* Summary */
+#summary {
+    display: none;
+    background-color: rgb(144, 115, 115);
+    border-color: 2px solid rgb(118, 110, 110);
+    position: absolute;
+    top: 0px;
+    left: 30%;
+    right: auto;
+    width: 42%;
+} 
+.sum-head {
+    width: 80%;
+    font-size: 21px;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: aliceblue;
+}
+.sum-name {
+    color: #FF9A3D;
+    font-size: 21.2px;
+    font-weight: bolder;
+    font-style: italic;
+}
+.sum-img {
+    width: 90%;
+    margin: 3px auto 5px auto
+}
+.sum-img + h3 {
+    width: 20%;
+    color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+    font-style: oblique;
+    font-weight: 900;
+    margin-bottom: 3px;
+}
+.sum-tab-head {
+    color: rgb(202, 214, 224);
+    font-style: italic;
+}
+.sum-tab {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.sum-btn {
+    width: 35%;
+    background-color: #FF7A00;
+    border-color: #FF7A00;
+    color: azure;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 5px;
+    position: relative;
+    top: 100%;
+    left: 60%;
+}
+.ref-p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+#refid {
+    color: beige;
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: 900;
+}
+

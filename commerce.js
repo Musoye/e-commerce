@@ -40,17 +40,18 @@ var products = [
     }
 
 ];
+
 // displaying element
 function DisplayElem(elementid) {
     let element = document.getElementById(elementid);
     element.style.display = 'block';
 }
+
 // Not display Element
 function NotDisplayElem(elementid) {
     let element = document.getElementById(elementid);
     element.style.display = 'none';
 }
-
 
 //Increse each body element
 function IncreaseNum(elementid) {
@@ -87,6 +88,7 @@ function IncreaseNum(elementid) {
     ttotal.value = totalCost.innerHTML;
     //console.log(ttotal.value);
 }
+
 // Decrease each body element
 function DecreaseNum(elementname) {
     let last = elementname.charAt(elementname.length - 1);
@@ -98,7 +100,7 @@ function DecreaseNum(elementname) {
         element.innerHTML = coun;
     }
     else {
-        alert(`The quantity can't be less than 1 and it will be removed,So if you still eant to buy it add the item back in the aAdd to Cart Menu. Thank you!  `);
+        alert(`The quantity can't be less than 1 and it will be removed,So if you still want to buy it, add the item back in the Add to Cart Menu. Thank you!  `);
         let elel = 'pixel' + last;
         let p = 'p' + last;
         coun = 0;
@@ -137,6 +139,18 @@ function DecreaseNum(elementname) {
     console.log(ttotal.value);
 
 }
+
+//function on and of siaplay
+function OnandOfPopPay(){
+    let pop = document.getElementById('pay');
+    if (pop.style.display === 'block'){
+        pop.style.display = 'none';    
+    }
+    else {
+        pop.style.display = 'block';      
+    }
+}
+
 //Displaying pop-up page
 function displayPopPay() {
     let pop = document.getElementById('pay');
@@ -147,22 +161,27 @@ function displayPopPay() {
 function ReloadSession() {
     location.reload();
 }
+
 //Not displaying the pop up
 function RemovePopPay() {
     let pop = document.getElementById('pay');
     pop.style.display = 'none';
 }
 
+//Display Summary
+function DisplaySummary(refe){
+    let summary = document.getElementById('summary');
+    let refid = document.getElementById("refid");
+    refid.innerHTML = refe;
+    summary.style.display = 'block';
+}
+
 function RemoveFromCart(elementid, elementname) {
     let Para = document.getElementById(elementid);
     let counter = document.getElementById('spa');
-    let numcount = parseInt(counter.innerHTML)
+    let numcount = parseInt(counter.innerHTML);
     let lastem = elementid.charAt(elementid.length - 1);
-    // console.log(elementid);
-    // console.log(lastem);
     let newelem = 'present' + lastem;
-    //console.log(newelem);
-    // console.log(elementname);
 
     if (Para.innerHTML === 'ADD TO CART') {
         DisplayElem(elementname);
@@ -175,8 +194,6 @@ function RemoveFromCart(elementid, elementname) {
     }
     else {
         NotDisplayElem(elementname);
-        //let newelement = document.getElementById(newelem);
-        //newelement.innerHTML = 0;
         if (count > 0) {
             numcount -= 1;
             counter.innerHTML = numcount;
@@ -219,7 +236,6 @@ function RemoveFromCart(elementid, elementname) {
 
     let ttotal = document.getElementById('tamounnt');
     ttotal.value = totalCost.innerHTML;
-    console.log(ttotal.value);
 }
 
 //calling each element with its dom
@@ -299,18 +315,39 @@ nbtn6.onclick = function () {
     DecreaseNum('present6');
 }
 
+//The receipt Catalogue Function
+function PrintReceipt(){
+    let name = document.getElementById('elementname');
+    let nam = document.getElementById('sum-name');
+    nam.innerHTML = name.innerHTML;
+    for (i = 1; i < 7; i++){
+        let eachElement = 'present' + i;
+        let elementid = document.getElementById(eachElement);
+        let elementVal = parseInt(elementid.innerHTML)
+        if (elementVal >= 1)
+        {
+            let nem = document.createElement("tr");
+            nem.innerHTML = `<td class="sum-tab-head">${products[i-1].name}</td><td class="sum-tab-head">${elementVal}</td>`
+            let parentElem = document.getElementById("sum-quantity");
+            parentElem.appendChild(nem);
+        }
+    }
+}
+
 //the submit and go the checkout
 function Checkout(){
     let name = document.getElementById('elementname');
     let email = document.getElementById('email');
     let number = document.getElementById('pnumber');
+    // let nam = document.getElementById('sum-name');
+    // nam.innerHTML = name.innerHTML;
     let newnum = parseInt(document.getElementById('spa').innerHTML);
     if (newnum <= 0){
-        alert('Please SELECT what you want to buy from the Cart Menu!');
+        alert("Ohh...You haven't select anything.Please SELECT what you want to buy from the Cart Menu!");
     }
     else{
         if (!(name.value) || !(email.value) || !(number.value)){
-            alert('Please kindly fill the form carefully and makee sure you enter any missing field including you mane e-mailand telephone number.');
+            alert('Please kindly fill the form carefully and make sure you enter any missing field including your NAME, E-MAIL, and TELEPHONE NUMBER.');
         }
         else {
             payWithPaystack();  
@@ -336,11 +373,14 @@ function payWithPaystack() {
       alert('Window closed.');
     },
     callback: function(response){
-      let message = 'Payment complete! Reference: ' + response.reference;
-      alert(message);
+        //response.reference
+        RemovePopPay();
+        PrintReceipt();
+        DisplaySummary(response.reference);
     }
   });
 
   handler.openIframe();
 }
+
 
