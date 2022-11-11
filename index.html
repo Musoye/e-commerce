@@ -16,12 +16,12 @@
             <a href="#middle">About</a>
             <a href="#buy">Shop</a>
           </div>
-          <button id="cart" onclick="displayPopPay()">
+          <button id="cart" onclick="OnandOfPopPay()">
             <img
               src="docum/Images/cart.svg"
               alt=""
               height="20px"
-              width="20px"
+              width="20px" 
             /><span id="spa">0</span>
           </button>
         </div>
@@ -126,7 +126,7 @@
     <div id="foot">
       <div id="set">
         <img src="docum/Images/EMS.svg" alt="" />
-        <p>Created,Designed and Crafted by Musoye</p>
+        <p>Coded and Implemented by Musoye <small>&copy;Ustacky</small></p>
       </div>
     </div>
 
@@ -206,7 +206,7 @@
         <div id="paid">
           <p>Total Amount to be paid</p>
           <div class="divamount">
-            <span class="amounted">₦</span>
+            <span class="amounted">&#8358;</span>
             <p class="amounted" id="amounted"></p>
             <p id='tamounnt' class="hid"></p>
           </div>
@@ -216,7 +216,7 @@
           <button
             style="background-color: #ff9a3d"
             id="nul"
-            onclick="ReloadSession()"
+            onclick="RemovePopPay()"
           >
             Continue Shopping
           </button>
@@ -225,6 +225,30 @@
           </button>
         </div>
       </div>
+    </div>
+
+    <div id="summary" class="summary">
+      <h3 class="sum-head">Thank you <span class="sum-name" id="sum-name"> </span>Your order has been received!</h3>
+
+      <img class='sum-img'src="docum/Images/check.svg
+      " alt="Check" height="100" class="check-img">
+
+      <h3 >Summary</h3>
+
+      <table class="sum-tab" >
+        <thead>
+          <tr>
+            <th class="sum-tab-head">Item</th>
+            <th class="sum-tab-head">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id='sum-quantity'>
+          </tr>
+        </tbody>
+      </table>
+      <p class="ref-p">Your Receipt Reference ID is <span id="refid"></span></p>
+      <button class="sum-btn" onclick="ReloadSession()">OK!</button>
     </div>
 
     <script src="https://js.paystack.co/v1/inline.js"></script> 
