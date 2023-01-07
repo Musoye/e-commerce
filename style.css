@@ -323,4 +323,7 @@ span.amounted {
     font-style: oblique;
     font-weight: 900;
 }
+.error {
+    color: red;
+}
 

@@ -41,6 +41,53 @@ var products = [
 
 ];
 
+//Form Input Verification
+//name verification
+function NameVerification(){
+    let name = document.getElementById('elementname');
+    let nameerr = document.getElementById("nameError");
+
+    if(!name.value){
+        name.style.border = '4px solid red';
+        nameerr.innerHTML = 'Please enter your name';
+    }else {
+        name.style.border = '4px solid green';
+        nameerr.innerHTML = '';
+    }
+}
+//Email verification
+function EmailVerification(){
+    let email = document.getElementById('email');
+    let eerr = document.getElementById('emailError')
+
+    if (!email.value){
+        email.style.border = '4px solid red';
+        eerr.innerHTML = 'Please enter your e-mail';
+    } else if (!email.value.includes('@')){
+        email.style.border = '4px solid red';
+        eerr.innerHTML = 'Please Enter correct HTML';
+    } else {
+        email.style.border = '4px solid green';
+        eerr.innerHTML = '';
+    }
+}
+//Phone number verification
+function PNumberVerification(){
+    let num = document.getElementById('pnumber');
+    let numerr = document.getElementById('pError');
+
+    if (!num.value){
+        num.style.border = '4px solid red';
+        numerr.innerHTML = 'Please enter your phone number'
+    }else if (! /^[0-9]{11}$/.test(num.value)){
+        num.style.border = '4px solid red';
+        numerr.innerHTML = 'make sure you enter 11 digit number';
+    }else{
+        num.style.border = '4px solid green';
+        numerr.innerHTML = '';
+    }
+}
+
 // displaying element
 function DisplayElem(elementid) {
     let element = document.getElementById(elementid);
@@ -319,7 +366,7 @@ nbtn6.onclick = function () {
 function PrintReceipt(){
     let name = document.getElementById('elementname');
     let nam = document.getElementById('sum-name');
-    nam.innerHTML = name.innerHTML;
+    nam.innerHTML = ' ' + name.value;
     for (i = 1; i < 7; i++){
         let eachElement = 'present' + i;
         let elementid = document.getElementById(eachElement);
@@ -343,11 +390,16 @@ function Checkout(){
     // nam.innerHTML = name.innerHTML;
     let newnum = parseInt(document.getElementById('spa').innerHTML);
     if (newnum <= 0){
+        NameVerification();
+        EmailVerification();
+        PNumberVerification();
         alert("Ohh...You haven't select anything.Please SELECT what you want to buy from the Cart Menu!");
     }
     else{
         if (!(name.value) || !(email.value) || !(number.value)){
-            alert('Please kindly fill the form carefully and make sure you enter any missing field including your NAME, E-MAIL, and TELEPHONE NUMBER.');
+            NameVerification();
+            EmailVerification();
+            PNumberVerification();
         }
         else {
             payWithPaystack();  
