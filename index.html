@@ -195,11 +195,14 @@
         </div>
         <div>
           <form action="">
-            <input type="text" id='elementname' placeholder="Your Name" required />
+            <input type="text" id='elementname' placeholder="Your Name" onblur="NameVerification()" required/>
             <br />
-            <input type="email" id='email'placeholder="Your E-mail" required />
+            <p class="error" id="nameError"></p>
+            <input type="email" id='email'placeholder="Your E-mail" onblur="EmailVerification()" required />
             <br />
-            <input type="tel" id="pnumber" placeholder="your Phone Number" required />
+            <p class="error" id="emailError"></p>
+            <input type="tel" id="pnumber" placeholder="your Phone Number" onblur="PNumberVerification()" required />
+            <p class="error" id="pError"></p>
           </form>
         </div>
 
@@ -228,7 +231,7 @@
     </div>
 
     <div id="summary" class="summary">
-      <h3 class="sum-head">Thank you <span class="sum-name" id="sum-name"> </span>Your order has been received!</h3>
+      <h3 class="sum-head">Thank you <span class="sum-name" id="sum-name"> </span>, Your order has been received!</h3>
 
       <img class='sum-img'src="docum/Images/check.svg
       " alt="Check" height="100" class="check-img">
